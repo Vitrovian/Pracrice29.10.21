@@ -1,0 +1,308 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FAFAFA;
+}
+
+.page-header{
+    background:url(/src/images/content/Header-image.jfif);
+    //min-height: 100vh;
+    background-size: cover;
+    background-position: top right;
+    
+    background-color:#fff;
+
+    &__title{
+        font-style: normal;
+        font-weight: 800;
+        font-size: 58px;
+        line-height: 80px;
+        text-transform: uppercase;
+        max-width: 520px;   
+        letter-spacing:  0.2px;
+        color: $text-color;
+    }
+    &__subtitle{
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: 0.2px;
+        text-align: left;
+        color: $second-text-color;
+        max-width: 520px;
+
+        padding: 40px 0 30px;
+
+    }
+}
+
+.container{
+    max-width: 1070px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+     
+}
+
+.button{
+    display: inline-block;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 28px;
+    padding: 9px 36px;
+    border: 1px solid;
+
+    transition: all ease 0.4s;
+
+    //модифікатор
+    &--orange{
+        border-color: $primary-color;
+        background-color: $primary-color;
+        color: #fff;
+
+        &:hover{
+            background-color:#fff;
+            color: $primary-color;
+        }
+    }
+    &--transparent{
+        background-color: transparent;
+        border-color: $secondary-color-1;
+        color: $secondary-color-1;
+
+        &:hover{
+            background-color:$secondary-color-1;
+            color:#fff;
+        }
+    }
+    //модифікатор2
+    &--rounded {
+        border-radius: 37px;
+    }
+
+
+}
+.page-top{
+    display: flex;
+    padding: 30px 0 100px;
+    
+    &__logo{
+        margin-right: 80px;
+        color: $text-color;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+        transition: opacity 0.4s ease ;
+
+        &:hover{  //page-top__logo:hover
+            opacity: 0.5;
+
+        }
+    }
+
+    &__navigation{
+         
+        ul{
+            display: flex;
+            a{
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 32px;
+                letter-spacing: 0.2px;
+                color: $second-text-color;
+
+                transition: opacity 0.4s ease ;
+                &:hover{
+                    //opacity: 0.5;
+                    color:$text-color;
+                }
+            }
+            
+            li{ //.page-top__navigation ul li {}
+
+            // *** 1 спосіб
+            // margin-right: 25px;
+            // &:last-child{
+            //     margin-right: 0;
+            // }
+
+            // ***2 спосіб
+            // &:not(:last-child){
+            //     margin-right: 25px;
+            // }
+
+            // *** 3 спосіб
+            & +li{ // li + li
+                margin-left: 25px;
+            }
+
+            }
+
+        }
+    }
+}
+.cards {
+
+    
+
+    position: relative;
+    top: 20px; 
+    
+    display: flex;
+    // position: relative;
+    // top: 25px;
+    margin-top: 60px;
+}
+.card{
+
+    box-shadow: 0px 13px 25px rgba(0, 0, 0, .25);
+    
+    position: static;
+    width: 328px;
+    height: 210px;
+    
+    padding: 35px  40px ;
+
+    background-color: #fff;
+
+    &:not(:last-child){ //не працює коли перериваються елементи
+            margin-right: 25px;
+    }
+    // icon
+    svg{
+        fill: $secondary-color-1;
+        transition: fill ease .6s;
+    }
+
+    // title
+    &__title{
+        //padding: 10px 0;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+        color: $text-color;
+        transition: color ease .6s;
+        //white-space: nowrap;
+    }
+    &__info{
+        padding: 10px 0;
+
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: #737373;
+        transition: color ease .6s;
+    }
+
+    transition: background-color ease .6s;
+    cursor: pointer;
+    
+    &:hover{
+        
+        background-color: $secondary-color-1;
+
+        .card__title, .card__info{
+            color: #fff;
+        }
+        svg{
+            fill: #fff;
+        }
+    }
+}
+
+.section{
+    //adding: 80px 0;
+    padding-top: 80px ;
+    padding-bottom: 80px;
+
+    &--why-choose{
+        margin-top: 80px;
+    }
+
+    &--video{
+        background-color: #fff;
+    }
+
+    &__title{
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 57px;
+        color: $text-color;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        text-align: center;
+    }
+    &__description{
+        max-width: 511px;
+        margin: 10px auto;
+
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+
+        text-align: center;
+       
+        color: $second-text-color;
+
+    }
+}
+
+.why-cards{
+    // display: flex;
+    // justify-content: space-around;
+
+    width: 100%;
+    margin-top: 50px;
+}
+.why-card{
+    cursor: default;
+    background-color: #fff;
+    text-align: center;
+
+    padding: 30px 20px;
+    width: 25%;
+
+    margin: 0 15px;
+//     &:not(:last-child){ 
+//         margin-right: 25px;
+// }
+    // min-width: 230px;
+    // min-height: 209px;
+    // padding-top: 30px;
+    
+    &__title{
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 57px;
+
+        padding-top: 10px;
+
+        letter-spacing: 0.2px;  
+        color: $text-color;
+    }
+
+    &__description{
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+
+        padding-top: 10px;
+        color: $second-text-color;
+    }
+
+    svg{
+        fill:$secondary-color-1
+    }
+}
+
+.block-w-video{
+    display: flex;
+    justify-content: space-around;
+}
+.slick-slider{
+    .slick-arrow{
+        background-color: $secondary-color-1;
+    }
+}
